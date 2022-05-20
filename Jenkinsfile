@@ -3,7 +3,7 @@ pipeline {
  stages {
         stage('Clone Repository') {
             steps {
-		git url: 'https://github.com/tushar8871/order_service.git', branch: 'master', credentialsId: 'CloudCoe-CodeDeploy'
+		git 'https://github.com/tusharkhachane/order_service.git'
             }
         }
         stage('verifying tools') {
@@ -56,7 +56,7 @@ pipeline {
 				#to deploy on aws 
                 
                 
-                aws deploy create-deployment --application-name Maven_application --deployment-group-name maven_application --deployment-config-name CodeDeployDefault.AllAtOnce --github-location repository=tushar8871/order_service,commitId=${GIT_COMMIT}
+                aws deploy create-deployment --application-name Maven_application --deployment-group-name maven_application --deployment-config-name CodeDeployDefault.AllAtOnce --github-location repository=tusharkhachane/order_service,commitId=${GIT_COMMIT}
 
             
                 echo Deployment Successfull
