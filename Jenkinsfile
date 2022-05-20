@@ -44,7 +44,7 @@ pipeline {
            steps {
                 sh ''' #!/bin/bash
 		cd /var/lib/jenkins/workspace/
-		zip -r order_service.zip order_service/
+		zip -r order_service.zip order_service/target/order-service.jar
                 #tar -zcvf order_service-${currentBuild.number}.tar.gz order_service/
 		aws s3 cp order_service.zip  s3://java-maven/
                 '''
