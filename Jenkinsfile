@@ -1,11 +1,6 @@
 pipeline {
     agent any
  stages {
-        stage('Clone Repository') {
-            steps {
-		git 'https://github.com/tusharkhachane/order_service.git'
-            }
-        }
         stage('verifying tools') {
             steps {
                 sh ''' #! /bin/bash
